@@ -1,0 +1,16 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "..",
+  "testEnvironment": "node",
+  "testRegex": ".test.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^@/(.*)": "<rootDir>/src/$1",
+    "^test/(.*)": "<rootDir>/test/$1"
+  },
+  "coverageReporters": ["clover", "json", "lcov", "text", "json-summary"],
+  "coveragePathIgnorePatterns": ["test", "node_modules"],
+  "coverageDirectory": "./report/coverage"
+}

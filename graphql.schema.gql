@@ -1,0 +1,24 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AccountRecipe {
+  email: String!
+  firstName: String!
+  id: String!
+  lastName: String!
+}
+
+input AccountRegisterArgs {
+  email: String!
+  firstName: String!
+  lastName: String!
+}
+
+type Mutation {
+  register(accountRegisterArgs: AccountRegisterArgs!): AccountRecipe!
+}
+
+type Query {
+  users: [AccountRecipe!]!
+}

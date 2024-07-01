@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  db:
+    container_name: nwm_postgresql
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pwd
+      - POSTGRES_DB=nwm_dev
+    volumes:
+      - nwm_pg_data:/var/lib/postgresql/data
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 54323:5432
+    networks:
+      - nwm_network
+
+networks:
+  nwm_network:
+    driver: bridge
+
+volumes:
+  nwm_pg_data:
